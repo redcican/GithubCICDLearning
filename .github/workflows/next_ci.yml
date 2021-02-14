@@ -27,7 +27,7 @@ jobs:
       - name: Download site content
         uses: actions/download-artifact@v2
         with:
-          name: public
+          name: static-site
 
       - name: View content
         run: ls -R
