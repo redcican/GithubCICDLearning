@@ -74,7 +74,7 @@ jobs:
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
-          password: ${{ secretes.TOKEN }}
+          password: ${{ secrets.TOKEN }}
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/webnext
           tags: latest, ${{ github.run_number }}
