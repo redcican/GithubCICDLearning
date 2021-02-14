@@ -62,13 +62,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Push to Docker Hub
-        uses: docker/build-push-action@v1
+      - uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          username: ${{ secrets.DOCKER_USERNAME}}
-          password: ${{ secrets.DOCKER_PASSWORD}}
-          repository: cican/webnext
-          tages: latest, ${{ github.run_number }}
+          image: cican/webnext
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Publish to Github Packages
         uses: docker/build-push-action@v1
