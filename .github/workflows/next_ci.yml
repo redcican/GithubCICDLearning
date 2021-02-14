@@ -28,6 +28,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: static-site
+          path: .next
 
       - name: View content
         run: ls -R
